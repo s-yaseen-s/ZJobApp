@@ -3,108 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard | job tracker</title>
-    <link href="./output.css" rel="stylesheet">
+    <title>Dashboard | DevTrack</title>
+    <link href="./dist/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-800">
+<body class="min-h-screen bg-devtrack-bg text-white">
     <div class="min-h-screen md:flex">
-        <aside class="bg-slate-900 p-6 text-white md:min-h-screen md:w-64">
-            <h1 class="text-2xl font-bold">job tracker</h1>
-            <p class="mt-1 text-sm text-slate-400">developer workspace</p>
+        <aside class="bg-devtrack-card border-r border-devtrack-border p-6 text-white md:min-h-screen md:w-64">
+            <h1 class="text-2xl font-bold tracking-tight">Dev<span class="text-devtrack-teal">Track</span></h1>
+            <p class="mt-1 text-sm text-devtrack-muted">developer job application tracker</p>
             <nav class="mt-8 space-y-2">
-                <a href="dashboard.html" class="block rounded-lg bg-slate-700 px-4 py-3">dashboard</a>
-                <a href="job-board.html" class="block rounded-lg px-4 py-3 hover:bg-slate-700">job board</a>
+                <a href="dashboard.html" class="block rounded-lg bg-devtrack-teal text-white px-4 py-3">dashboard</a>
+                <a href="job-board.html" class="block rounded-lg px-4 py-3 hover:bg-devtrack-border">job board</a>
             </nav>
         </aside>
 
         <main class="flex-1 p-5 md:p-8">
             <header class="mb-8 flex flex-wrap items-center justify-between gap-4">
                 <div>
-                    <p class="text-sm text-slate-500">overview</p>
+                    <p class="text-sm text-devtrack-muted">overview</p>
                     <h2 class="text-3xl font-bold">dashboard</h2>
                 </div>
-                <a href="job-board.html" class="rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white">find a job</a>
+                <a href="job-board.html" class="rounded-lg bg-devtrack-teal px-5 py-3 font-semibold text-white transition hover:opacity-90">find a job</a>
             </header>
 
             <!-- summary cards -->
             <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                <div class="rounded-xl bg-white p-5 shadow-sm">
-                    <p class="text-sm text-slate-500">saved jobs</p>
+                <div class="rounded-xl bg-devtrack-card border border-devtrack-border p-5 shadow-sm">
+                    <p class="text-sm text-devtrack-muted">saved jobs</p>
                     <p class="mt-2 text-3xl font-bold">12</p>
                 </div>
-                <div class="rounded-xl bg-white p-5 shadow-sm">
-                    <p class="text-sm text-slate-500">applications</p>
+                <div class="rounded-xl bg-devtrack-card border border-devtrack-border p-5 shadow-sm">
+                    <p class="text-sm text-devtrack-muted">applications</p>
                     <p class="mt-2 text-3xl font-bold">8</p>
                 </div>
-                <div class="rounded-xl bg-white p-5 shadow-sm">
-                    <p class="text-sm text-slate-500">interviews</p>
+                <div class="rounded-xl bg-devtrack-card border border-devtrack-border p-5 shadow-sm">
+                    <p class="text-sm text-devtrack-muted">interviews</p>
                     <p class="mt-2 text-3xl font-bold">3</p>
                 </div>
-                <div class="rounded-xl bg-white p-5 shadow-sm">
-                    <p class="text-sm text-slate-500">offers</p>
+                <div class="rounded-xl bg-devtrack-card border border-devtrack-border p-5 shadow-sm">
+                    <p class="text-sm text-devtrack-muted">offers</p>
                     <p class="mt-2 text-3xl font-bold">1</p>
                 </div>
             </section>
 
             <!-- applications by stage -->
             <section class="mt-8 grid gap-6 xl:grid-cols-2">
-                <div class="rounded-xl bg-white p-6 shadow-sm">
+                <div class="rounded-xl bg-devtrack-card border border-devtrack-border p-6 shadow-sm">
                     <h3 class="text-lg font-bold">applications by stage</h3>
-                    <p class="mt-1 text-sm text-slate-500">current application progress</p>
+                    <p class="mt-1 text-sm text-devtrack-muted">current application progress</p>
 
                     <div class="mt-6 space-y-4">
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>applied</span><span>8</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-full rounded-full bg-blue-600"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-full rounded-full bg-devtrack-teal"></div></div>
                         </div>
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>screening</span><span>5</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-3/5 rounded-full bg-indigo-500"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-3/5 rounded-full bg-devtrack-teal"></div></div>
                         </div>
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>interview</span><span>3</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-2/5 rounded-full bg-amber-500"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-2/5 rounded-full bg-devtrack-teal"></div></div>
                         </div>
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>offer</span><span>1</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-1/5 rounded-full bg-green-600"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-1/5 rounded-full bg-devtrack-teal"></div></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- employment type -->
-                <div class="rounded-xl bg-white p-6 shadow-sm">
+                <div class="rounded-xl bg-devtrack-card border border-devtrack-border p-6 shadow-sm">
                     <h3 class="text-lg font-bold">employment type</h3>
-                    <p class="mt-1 text-sm text-slate-500">saved jobs by work type</p>
+                    <p class="mt-1 text-sm text-devtrack-muted">saved jobs by work type</p>
 
                     <div class="mt-6 space-y-4">
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>full-time</span><span>6 jobs</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-1/2 rounded-full bg-blue-600"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-1/2 rounded-full bg-devtrack-teal"></div></div>
                         </div>
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>remote</span><span>3 jobs</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-1/4 rounded-full bg-purple-500"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-1/4 rounded-full bg-purple-500"></div></div>
                         </div>
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>internship</span><span>2 jobs</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-1/6 rounded-full bg-amber-500"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-1/6 rounded-full bg-devtrack-teal"></div></div>
                         </div>
                         <div>
                             <div class="mb-1 flex justify-between text-sm"><span>part-time</span><span>1 job</span></div>
-                            <div class="h-3 rounded-full bg-slate-100"><div class="h-3 w-1/12 rounded-full bg-green-600"></div></div>
+                            <div class="h-3 rounded-full bg-devtrack-border"><div class="h-3 w-1/12 rounded-full bg-devtrack-teal"></div></div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- recent applications -->
-            <section class="mt-8 rounded-xl bg-white p-6 shadow-sm">
+            <section class="mt-8 rounded-xl bg-devtrack-card border border-devtrack-border p-6 shadow-sm">
                 <h3 class="text-lg font-bold">recent applications</h3>
                 <div class="mt-5 overflow-x-auto">
                     <table class="w-full min-w-[600px] text-left text-sm">
                         <thead>
-                            <tr class="border-b text-slate-500">
+                            <tr class="border-b border-devtrack-border text-devtrack-muted">
                                 <th class="py-3 pr-4">job title</th>
                                 <th class="py-3 pr-4">company</th>
                                 <th class="py-3 pr-4">date applied</th>
@@ -112,28 +112,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b">
+                            <tr class="border-b border-devtrack-border">
                                 <td class="py-4 pr-4 font-semibold">junior web developer</td>
                                 <td class="py-4 pr-4">bright solutions</td>
                                 <td class="py-4 pr-4">20 oct 2026</td>
-                                <td class="py-4"><span class="rounded-full bg-amber-100 px-3 py-1 text-amber-700">interview</span></td>
+                                <td class="py-4"><span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-devtrack-mint">interview</span></td>
                             </tr>
-                            <tr class="border-b">
+                            <tr class="border-b border-devtrack-border">
                                 <td class="py-4 pr-4 font-semibold">software tester intern</td>
                                 <td class="py-4 pr-4">tech point</td>
                                 <td class="py-4 pr-4">18 oct 2026</td>
-                                <td class="py-4"><span class="rounded-full bg-blue-100 px-3 py-1 text-blue-700">screening</span></td>
+                                <td class="py-4"><span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-devtrack-mint">screening</span></td>
                             </tr>
                             <tr>
                                 <td class="py-4 pr-4 font-semibold">frontend developer</td>
                                 <td class="py-4 pr-4">pixel studio</td>
                                 <td class="py-4 pr-4">15 oct 2026</td>
-                                <td class="py-4"><span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">applied</span></td>
+                                <td class="py-4"><span class="rounded-full bg-devtrack-border px-3 py-1 text-devtrack-mint">applied</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="mt-4 text-xs text-slate-400">sample data for prototype demonstration only</p>
+                <p class="mt-4 text-xs text-devtrack-muted">sample data for prototype demonstration only</p>
             </section>
         </main>
     </div>
