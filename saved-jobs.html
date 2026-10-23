@@ -1,174 +1,152 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saved Jobs | DevTrack</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="./dist/output.css" rel="stylesheet">
 </head>
-<body>
-    <input type="checkbox" id="dark-mode">
-    <div class="app-layout">
-        <aside class="sidebar">
-            <a href="index.html" class="brand">
-                <img class="light-logo" src="assets/devtrack-logo-light.png" alt="DevTrack">
-                <img class="dark-logo" src="assets/devtrack-logo-dark.png" alt="DevTrack">
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="landingPage.html" class="flex items-center space-x-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-xl font-black text-white shadow-md">D</span>
+                <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Dev<span class="text-teal-600">Track</span></span>
             </a>
-            <p class="menu-title">WORKSPACE</p>
-            <nav>
-                <a href="dashboard.html"> Dashboard</a>
-                <a href="job-board.html"> Job Board</a>
-                <a href="saved-jobs.html" class="active"> Saved Jobs</a>
-                <a href="application-tracker.html"> Applications</a>
+            <nav aria-label="Main navigation" class="hidden items-center space-x-6 text-sm font-semibold text-slate-600 dark:text-slate-300 md:flex">
+                <a href="landingPage.html" class="transition hover:text-teal-600">Home</a>
+                <a href="job-board.html" class="transition hover:text-teal-600">Job Board</a>
+                <a href="saved-jobs.html" aria-current="page" class="transition hover:text-teal-600">Saved Jobs</a>
+                <a href="dashboard.html" class="transition hover:text-teal-600">Dashboard</a>
             </nav>
-            <div class="sidebar-bottom">
-                <label for="dark-mode" class="theme-toggle">
-                    <span>Dark mode</span>
-                    <span class="toggle-state">Toggle</span>
-                </label>
-                <a href="profile-settings.html">Settings</a>
+            <div class="hidden items-center md:flex">
+                <a href="login.html" class="rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-700">Sign In</a>
             </div>
-        </aside>
-        <main class="main-content">
-            <header class="topbar">
-                <div class="page-heading">
-                    <p class="breadcrumb">Saved Jobs</p>
-                    <h1>Saved Jobs</h1>
-                    <p class="secondary-text">
-                        Keep your favorite opportunities in one place.
-                    </p>
+            <details class="relative md:hidden">
+                <summary class="list-none cursor-pointer rounded-md border border-slate-200 p-2 text-slate-700 dark:border-slate-800 dark:text-slate-300">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </summary>
+                <div class="absolute right-0 top-12 z-50 w-56 space-y-3 rounded-xl border border-slate-200 bg-white p-4 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
+                    <a href="landingPage.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Home</a>
+                    <a href="job-board.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Job Board</a>
+                    <a href="saved-jobs.html" aria-current="page" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Saved Jobs</a>
+                    <a href="dashboard.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Dashboard</a>
+                    <hr class="border-slate-200 dark:border-slate-800">
+                    <a href="login.html" class="block w-full rounded-lg bg-teal-600 px-3 py-2 text-center text-sm font-semibold text-white hover:bg-teal-700">Sign In</a>
                 </div>
-                <div class="topbar-right">
-                    <span class="notification" aria-label="Notifications"></span>
-                    <div class="profile">
-                        <span class="avatar">M</span>
-                        <span>My Profile</span>
-                    </div>
+            </details>
+        </div>
+    </header>
+
+    <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+            <header class="mb-8 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <p class="text-sm font-medium text-teal-700 dark:text-teal-400">Your collection</p>
+                    <h1 class="mt-1 text-3xl font-bold tracking-tight">Saved Jobs</h1>
+                    <p class="mt-2 text-slate-600 dark:text-slate-400">Keep your favorite opportunities in one place.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-teal-100 font-bold text-teal-800 dark:bg-teal-950 dark:text-teal-300" aria-hidden="true">M</span>
+                    <span class="text-sm font-semibold">My Profile</span>
                 </div>
             </header>
-            <section class="saved-summary">
+
+            <section class="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                 <div>
-                    <p class="info-label">YOUR COLLECTION</p>
-                    <h2>Saved Opportunities</h2>
-                    <p class="secondary-text">3 example jobs saved for later</p>
+                    <p class="text-sm font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-400">Your collection</p>
+                    <h2 class="mt-1 text-xl font-bold">Saved Opportunities</h2>
+                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">3 example jobs saved for later</p>
                 </div>
-                <a href="job-board.html" class="primary-button">
-                    Browse Jobs 
-                </a>
+                <a href="job-board.html" class="rounded-lg bg-teal-600 px-5 py-3 text-center font-semibold text-white shadow-sm transition hover:bg-teal-700">Browse Jobs</a>
             </section>
-            <section class="filters" aria-label="Filter saved jobs">
-                <p class="filter-heading">Filter by employment type</p>
-                <div class="job-filter-options">
-                    <input type="radio" name="job-type" id="filter-all" checked>
-                    <label for="filter-all">All jobs</label>
 
-                    <input type="radio" name="job-type" id="filter-full-time">
-                    <label for="filter-full-time">Full-time</label>
-
-                    <input type="radio" name="job-type" id="filter-internship">
-                    <label for="filter-internship">Internship</label>
+            <section class="mb-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900" aria-label="Filter saved jobs">
+                <p class="mb-3 font-semibold">Filter by employment type</p>
+                <div class="flex flex-wrap gap-3">
+                    <input type="radio" name="job-type" id="filter-all" class="peer/all sr-only" checked>
+                    <label for="filter-all" class="cursor-pointer rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-teal-600 peer-checked/all:border-teal-600 peer-checked/all:bg-teal-600 peer-checked/all:text-white dark:border-slate-700 dark:text-slate-300">All jobs</label>
+                    <input type="radio" name="job-type" id="filter-full-time" class="peer/fulltime sr-only">
+                    <label for="filter-full-time" class="cursor-pointer rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-teal-600 peer-checked/fulltime:border-teal-600 peer-checked/fulltime:bg-teal-600 peer-checked/fulltime:text-white dark:border-slate-700 dark:text-slate-300">Full-time</label>
+                    <input type="radio" name="job-type" id="filter-internship" class="peer/internship sr-only">
+                    <label for="filter-internship" class="cursor-pointer rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-teal-600 peer-checked/internship:border-teal-600 peer-checked/internship:bg-teal-600 peer-checked/internship:text-white dark:border-slate-700 dark:text-slate-300">Internship</label>
                 </div>
-                <p class="filter-help">Choose a filter to show matching saved jobs.</p>
+                <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">Choose a filter to show matching saved jobs.</p>
             </section>
-            <section class="saved-jobs-list">
-                <article class="saved-job-card">
-                    <div class="saved-job-heading">
-                        <div class="company-logo google">G</div>
-                        <div class="job-title-area">
-                            <h3>Frontend Developer</h3>
-                            <p class="company-name">Google</p>
-                            <p class="secondary-text">Cairo, Egypt · Hybrid</p>
+
+            <section class="grid gap-5 xl:grid-cols-2" aria-label="Saved opportunities">
+                <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-xl font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">G</div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-lg font-bold">Frontend Developer</h3>
+                            <p class="mt-1 font-medium text-slate-600 dark:text-slate-300">Google</p>
+                            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Cairo, Egypt · Hybrid</p>
                         </div>
-                        <span class="status-badge">Saved</span>
+                        <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800 dark:bg-teal-950 dark:text-teal-300">Saved</span>
                     </div>
-                    <p class="description">
-                        Build responsive web applications and create
-                        user-friendly interfaces with a development team.
-                    </p>
-                    <div class="skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
+                    <p class="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">Build responsive web applications and create user-friendly interfaces with a development team.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                        <span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">HTML</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">CSS</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">JavaScript</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">React</span>
                     </div>
-                    <div class="saved-job-footer">
-                        <p class="secondary-text">Full-time · Entry level</p>
-                        <div class="job-actions">
-                            <a href="job-details.html" class="secondary-button">
-                                View Details
-                            </a>
-                            <a href="add-application.html" class="primary-button">
-                                Add to Tracker 
-                            </a>
+                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4 dark:border-slate-800">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Full-time · Entry level</p>
+                        <div class="flex gap-2">
+                            <a href="job-details.html" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">View Details</a>
+                            <a href="dashboard.html" class="rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700">Add to Tracker</a>
                         </div>
                     </div>
                 </article>
-                <article class="saved-job-card">
-                    <div class="saved-job-heading">
-                        <div class="company-logo meta">M</div>
-                        <div class="job-title-area">
-                            <h3>Software Engineering Intern</h3>
-                            <p class="company-name">Meta</p>
-                            <p class="secondary-text">Remote · Egypt</p>
+
+                <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-xl font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">M</div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-lg font-bold">Software Engineering Intern</h3>
+                            <p class="mt-1 font-medium text-slate-600 dark:text-slate-300">Meta</p>
+                            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Remote · Egypt</p>
                         </div>
-                        <span class="status-badge">Saved</span>
+                        <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800 dark:bg-teal-950 dark:text-teal-300">Saved</span>
                     </div>
-                    <p class="description">
-                        Learn from experienced engineers while contributing
-                        to software development projects.
-                    </p>
-                    <div class="skills">
-                        <span>Python</span>
-                        <span>C++</span>
-                        <span>Data Structures</span>
+                    <p class="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">Learn from experienced engineers while contributing to software development projects.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                        <span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">Python</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">C++</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">Data Structures</span>
                     </div>
-                    <div class="saved-job-footer">
-                        <p class="secondary-text">Internship · Student</p>
-                        <div class="job-actions">
-                            <a href="job-details.html" class="secondary-button">
-                                View Details
-                            </a>
-                            <a href="add-application.html" class="primary-button">
-                                Add to Tracker 
-                            </a>
+                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4 dark:border-slate-800">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Internship · Student</p>
+                        <div class="flex gap-2">
+                            <a href="job-details.html" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">View Details</a>
+                            <a href="dashboard.html" class="rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700">Add to Tracker</a>
                         </div>
                     </div>
                 </article>
-                <article class="saved-job-card">
-                    <div class="saved-job-heading">
-                        <div class="company-logo stripe">S</div>
-                        <div class="job-title-area">
-                            <h3>Junior Software Developer</h3>
-                            <p class="company-name">Stripe</p>
-                            <p class="secondary-text">Remote · Flexible</p>
+
+                <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-xl font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-200">S</div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-lg font-bold">Junior Software Developer</h3>
+                            <p class="mt-1 font-medium text-slate-600 dark:text-slate-300">Stripe</p>
+                            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Remote · Flexible</p>
                         </div>
-                        <span class="status-badge">Saved</span>
+                        <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800 dark:bg-teal-950 dark:text-teal-300">Saved</span>
                     </div>
-                    <p class="description">
-                        Help develop and maintain software tools and reliable
-                        web services.
-                    </p>
-                    <div class="skills">
-                        <span>JavaScript</span>
-                        <span>APIs</span>
-                        <span>Git</span>
+                    <p class="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">Help develop and maintain software tools and reliable web services.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                        <span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">JavaScript</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">APIs</span><span class="rounded-full bg-slate-100 px-3 py-1.5 dark:bg-slate-800">Git</span>
                     </div>
-                    <div class="saved-job-footer">
-                        <p class="secondary-text">Full-time · Junior</p>
-                        <div class="job-actions">
-                            <a href="job-details.html" class="secondary-button">
-                                View Details
-                            </a>
-                            <a href="add-application.html" class="primary-button">
-                                Add to Tracker 
-                            </a>
+                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4 dark:border-slate-800">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Full-time · Junior</p>
+                        <div class="flex gap-2">
+                            <a href="job-details.html" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">View Details</a>
+                            <a href="dashboard.html" class="rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700">Add to Tracker</a>
                         </div>
                     </div>
                 </article>
             </section>
-            <p class="footer-note">DevTrack · Track your career journey.</p>
-        </main>
-    </div>
+            <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">DevTrack · Track your career journey.</p>
+    </main>
 </body>
 </html>
