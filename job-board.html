@@ -6,35 +6,79 @@
     <title>job board | DevTrack</title>
     <link href="./dist/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-    <div class="min-h-screen md:flex">
-        <aside class="bg-white p-6 dark:bg-slate-900 text-slate-900 border-b border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 md:border-b-0 md:border-r md:min-h-screen md:w-64">
-            <h1 class="text-2xl font-bold tracking-tight">Dev<span class="text-teal-600">Track</span></h1>
-            <p class="mt-1 text-sm text-slate-400 dark:text-slate-500">developer job application tracker</p>
-            <nav class="mt-8 space-y-2">
-                <a href="dashboard.html" class="block rounded-lg px-4 py-3 hover:bg-teal-600">dashboard</a>
-                <a href="job-board.html" class="block rounded-lg bg-teal-600 px-4 py-3">job board</a>
-            </nav>
-        </aside>
+<body class="min-h-screen bg-devtrack-bg text-white">
 
-        <main class="flex-1 p-5 md:p-8">
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="landingPage.html" class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-white font-black text-xl shadow-md">
+          D
+        </div>
+        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+          Dev<span class="text-teal-600">Track</span>
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav aria-label="Global" class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#features" class="hover:text-teal-600 transition">Features</a>
+        <a href="#workflow" class="hover:text-teal-600 transition">Workflow</a>
+        <a href="job-board.html" class="hover:text-teal-600 transition">Job Board</a>
+        <a href="tracker.html" class="hover:text-teal-600 transition">Kanban Tracker</a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="login.html" class="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-teal-600 px-3 py-2">
+          Sign In
+        </a>
+        <a href="register.html" class="text-sm font-semibold text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg shadow-sm transition">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Pure HTML Mobile Menu -->
+      <details class="md:hidden relative">
+        <summary class="list-none cursor-pointer p-2 rounded-md border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+          <span class="sr-only">Open menu</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-12 w-56 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl p-4 space-y-3 z-50">
+          <a href="dashboard.html" class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Dashboard</a>
+          <a href="job-board.html" class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Job Board</a>
+          <a href="tracker.html" class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Kanban Board</a>
+          <hr class="border-slate-200 dark:border-slate-800">
+          <a href="login.html" class="block w-full text-center px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 rounded-lg">Sign In</a>
+          <a href="register.html" class="block w-full text-center px-3 py-2 text-sm font-semibold text-white bg-teal-600 rounded-lg">Get Started</a>
+        </div>
+      </details>
+
+    </div>
+  </header>
+
+            <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
             <header class="mb-8">
-                <p class="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500">find your next opportunity</p>
+                <p class="text-sm text-devtrack-muted">find your next opportunity</p>
                 <h2 class="mt-1 text-3xl font-bold">job board</h2>
-                <p class="mt-2 text-slate-600 dark:text-slate-300">browse jobs and find opportunities that match your skills.</p>
+                <p class="mt-2 text-devtrack-muted">browse jobs and find opportunities that match your skills.</p>
             </header>
 
             <!-- search and filters -->
-            <section class="rounded-xl bg-white p-5 dark:bg-slate-900 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+            <section class="rounded-xl bg-devtrack-card p-5 shadow-sm border border-devtrack-border">
                 <form action="#" class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     <div class="xl:col-span-2">
                         <label for="search" class="mb-2 block text-sm font-semibold">search jobs</label>
                         <input id="search" type="search" placeholder="job title or company"
-                               class="w-full rounded-lg border border-slate-300 dark:border-slate-700 px-4 py-3">
+                               class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white placeholder:text-devtrack-muted px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
                     </div>
                     <div>
                         <label for="type" class="mb-2 block text-sm font-semibold">employment type</label>
-                        <select id="type" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white px-4 py-3 dark:bg-slate-950">
+                        <select id="type" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
                             <option value="">any type</option>
                             <option>full-time</option>
                             <option>remote</option>
@@ -45,7 +89,7 @@
                     </div>
                     <div>
                         <label for="level" class="mb-2 block text-sm font-semibold">experience level</label>
-                        <select id="level" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white px-4 py-3 dark:bg-slate-950">
+                        <select id="level" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
                             <option value="">any level</option>
                             <option>intern</option>
                             <option>junior</option>
@@ -55,7 +99,7 @@
                     </div>
                     <div>
                         <label for="salary" class="mb-2 block text-sm font-semibold">salary</label>
-                        <select id="salary" class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white px-4 py-3 dark:bg-slate-950">
+                        <select id="salary" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
                             <option value="">any salary</option>
                             <option>under $30k</option>
                             <option>$30k - $60k</option>
@@ -64,7 +108,7 @@
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <button type="button" class="w-full rounded-lg bg-teal-600 px-5 py-3 font-semibold text-white">
+                        <button type="button" class="w-full rounded-lg bg-devtrack-teal px-5 py-3 font-semibold text-white">
                             search jobs
                         </button>
                     </div>
@@ -75,11 +119,11 @@
                 <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
                     <div>
                         <h3 class="text-xl font-bold">available jobs</h3>
-                        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500">showing 4 sample jobs</p>
+                        <p class="mt-1 text-sm text-devtrack-muted">showing 4 sample jobs</p>
                     </div>
                     <label class="flex items-center gap-2 text-sm">
                         <span>sort by</span>
-                        <select class="rounded-lg border border-slate-300 dark:border-slate-700 bg-white px-3 py-2">
+                        <select class="rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-3 py-2">
                             <option>most recent</option>
                             <option>company name</option>
                             <option>job title</option>
@@ -88,94 +132,93 @@
                 </div>
 
                 <!-- job 1 -->
-                <article class="mb-4 rounded-xl bg-white p-5 dark:bg-slate-900 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+                <article class="mb-4 rounded-xl bg-devtrack-card p-5 shadow-sm border border-devtrack-border">
                     <div class="flex flex-wrap items-start justify-between gap-4">
                         <div>
                             <h4 class="text-lg font-bold">junior frontend developer</h4>
-                            <p class="mt-1 text-slate-600 dark:text-slate-300">pixel studio</p>
+                            <p class="mt-1 text-devtrack-muted">pixel studio</p>
                         </div>
-                        <span class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-700">full-time</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">full-time</span>
                     </div>
-                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-300">
-                        <span class="rounded-md bg-slate-100 px-3 py-1">remote</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">junior</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">$30k - $45k</span>
+                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">remote</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">junior</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">$30k - $45k</span>
                     </div>
-                    <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">help build websites using html, css and javascript.</p>
+                    <p class="mt-4 text-sm leading-6 text-devtrack-muted">help build websites using html, css and javascript.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-                        <p class="text-sm text-slate-400 dark:text-slate-500">posted 2 days ago</p>
-                        <button type="button" class="rounded-lg border border-teal-600 px-4 py-2 font-semibold text-teal-700 dark:text-teal-400">save job</button>
+                        <p class="text-sm text-devtrack-muted">posted 2 days ago</p>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
                 <!-- job 2 -->
-                <article class="mb-4 rounded-xl bg-white p-5 dark:bg-slate-900 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+                <article class="mb-4 rounded-xl bg-devtrack-card p-5 shadow-sm border border-devtrack-border">
                     <div class="flex flex-wrap items-start justify-between gap-4">
                         <div>
                             <h4 class="text-lg font-bold">software testing intern</h4>
-                            <p class="mt-1 text-slate-600 dark:text-slate-300">tech point</p>
+                            <p class="mt-1 text-devtrack-muted">tech point</p>
                         </div>
-                        <span class="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-700">internship</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">internship</span>
                     </div>
-                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-300">
-                        <span class="rounded-md bg-slate-100 px-3 py-1">hybrid</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">intern</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">$8k - $12k</span>
+                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">hybrid</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">intern</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">$8k - $12k</span>
                     </div>
-                    <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">help with test cases, bug reports and manual testing.</p>
+                    <p class="mt-4 text-sm leading-6 text-devtrack-muted">help with test cases, bug reports and manual testing.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-                        <p class="text-sm text-slate-400 dark:text-slate-500">posted 4 days ago</p>
-                        <button type="button" class="rounded-lg border border-teal-600 px-4 py-2 font-semibold text-teal-700 dark:text-teal-400">save job</button>
+                        <p class="text-sm text-devtrack-muted">posted 4 days ago</p>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
                 <!-- job 3 -->
-                <article class="mb-4 rounded-xl bg-white p-5 dark:bg-slate-900 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+                <article class="mb-4 rounded-xl bg-devtrack-card p-5 shadow-sm border border-devtrack-border">
                     <div class="flex flex-wrap items-start justify-between gap-4">
                         <div>
                             <h4 class="text-lg font-bold">junior web developer</h4>
-                            <p class="mt-1 text-slate-600 dark:text-slate-300">bright solutions</p>
+                            <p class="mt-1 text-devtrack-muted">bright solutions</p>
                         </div>
-                        <span class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-700">full-time</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">full-time</span>
                     </div>
-                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-300">
-                        <span class="rounded-md bg-slate-100 px-3 py-1">hybrid</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">junior</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">$35k - $50k</span>
+                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">hybrid</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">junior</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">$35k - $50k</span>
                     </div>
-                    <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">work with the team to build and improve web applications.</p>
+                    <p class="mt-4 text-sm leading-6 text-devtrack-muted">work with the team to build and improve web applications.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-                        <p class="text-sm text-slate-400 dark:text-slate-500">posted 1 week ago</p>
-                        <button type="button" class="rounded-lg border border-teal-600 px-4 py-2 font-semibold text-teal-700 dark:text-teal-400">save job</button>
+                        <p class="text-sm text-devtrack-muted">posted 1 week ago</p>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
                 <!-- job 4 -->
-                <article class="rounded-xl bg-white p-5 dark:bg-slate-900 shadow-sm border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+                <article class="rounded-xl bg-devtrack-card p-5 shadow-sm border border-devtrack-border">
                     <div class="flex flex-wrap items-start justify-between gap-4">
                         <div>
                             <h4 class="text-lg font-bold">backend developer intern</h4>
-                            <p class="mt-1 text-slate-600 dark:text-slate-300">code nest</p>
+                            <p class="mt-1 text-devtrack-muted">code nest</p>
                         </div>
-                        <span class="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-700">internship</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">internship</span>
                     </div>
-                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-300">
-                        <span class="rounded-md bg-slate-100 px-3 py-1">on-site</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">intern</span>
-                        <span class="rounded-md bg-slate-100 px-3 py-1">$10k - $15k</span>
+                    <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">on-site</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">intern</span>
+                        <span class="rounded-md bg-devtrack-border px-3 py-1">$10k - $15k</span>
                     </div>
-                    <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">learn backend development and help with simple api tasks.</p>
+                    <p class="mt-4 text-sm leading-6 text-devtrack-muted">learn backend development and help with simple api tasks.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-                        <p class="text-sm text-slate-400 dark:text-slate-500">posted 1 week ago</p>
-                        <button type="button" class="rounded-lg border border-teal-600 px-4 py-2 font-semibold text-teal-700 dark:text-teal-400">save job</button>
+                        <p class="text-sm text-devtrack-muted">posted 1 week ago</p>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
-                <p class="mt-5 text-xs text-slate-400 dark:text-slate-500">
+                <p class="mt-5 text-xs text-devtrack-muted">
                     sample data for prototype demonstration only. search, filters and save buttons are visual placeholders.
                 </p>
             </section>
         </main>
-    </div>
 </body>
 </html>
