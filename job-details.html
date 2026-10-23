@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | DevTrack</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <input type="checkbox" id="dark-mode">
+    <div class="app-layout">
+        <aside class="sidebar">
+            <a href="index.html" class="brand">
+                <img class="light-logo" src="assets/devtrack-logo-light.png" alt="DevTrack">
+                <img class="dark-logo" src="assets/devtrack-logo-dark.png" alt="DevTrack">
+            </a>
+            <p class="menu-title">WORKSPACE</p>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="job-board.html" class="active">Job Board</a>
+                <a href="saved-jobs.html">Saved Jobs</a>
+                <a href="application-tracker.html"> Applications</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <label for="dark-mode" class="theme-toggle">
+                    <span>Dark mode</span>
+                    <span class="toggle-state">Toggle</span>
+                </label>
+                <a href="profile-settings.html">Settings</a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-heading">
+                    <p class="breadcrumb">Job Board</p>
+                    <h1>Job Details</h1>
+                    <p class="secondary-text">Explore this opportunity and its requirements.</p>
+                </div>
+                <div class="topbar-right">
+                    <span class="notification" aria-label="Notifications"></span>
+                    <div class="profile">
+                        <span class="avatar">M</span>
+                        <span>My Profile</span>
+                    </div>
+                </div>
+            </header>
+            <a href="job-board.html" class="back-link"> Back to Job Board</a>
+            <section class="job-card">
+                <div class="job-heading">
+                    <div class="company-logo google">G</div>
+                    <div class="job-title-area">
+                        <h2>Frontend Developer</h2>
+                        <p class="company-name">Google</p>
+                        <p class="secondary-text">Cairo, Egypt · Hybrid · Full-time</p>
+                    </div>
+                    <span class="status-badge">Full-time</span>
+                </div>
+                <div class="job-info">
+                    <div class="info-box">
+                        <p class="info-label">Estimated Salary</p>
+                        <p class="info-value">Not specified</p>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-label">Experience</p>
+                        <p class="info-value">Entry level</p>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-label">Employment Type</p>
+                        <p class="info-value">Full-time</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <section class="details-section">
+                    <h3>About the Job</h3>
+                    <p class="description">
+                        We are looking for a Frontend Developer to help build
+                        responsive and user-friendly web applications. You will
+                        work with a team to create clear, accessible, and
+                        reliable user interfaces.
+                    </p>
+                </section>
+                <section class="details-section">
+                    <h3>Responsibilities</h3>
+                    <ul class="details-list">
+                        <li>Build and maintain responsive web pages.</li>
+                        <li>Work with designers and other developers.</li>
+                        <li>Write clean and organized code.</li>
+                        <li>Test pages on different screen sizes.</li>
+                    </ul>
+                </section>
+                <section class="details-section">
+                    <h3>Required Skills</h3>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Git</span>
+                    </div>
+                </section>
+                <section class="details-section">
+                    <h3>About Google</h3>
+                    <p class="description">
+                        Google develops technology products and online services,
+                        including tools used by developers around the world.
+                    </p>
+                </section>
+                <div class="section-divider"></div>
+                <div class="job-actions">
+                    <a href="add-application.html" class="primary-button">
+                        Add to Tracker 
+                    </a>
+                    <a href="saved-jobs.html" class="secondary-button">
+                         View Saved Jobs
+                    </a>
+                </div>
+            </section>
+            <p class="footer-note">DevTrack · Track your career journey.</p>
+        </main>
+    </div>
+</body>
+</html>
