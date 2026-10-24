@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Tracker | DevTrack</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <script src="./src/theme.js" defer></script>
+
+    <style>
+        .tracker-container {
+            width: 94%;
+            max-width: 1400px;
+            margin: 40px auto;
+        }
+
+        .tracker-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .tracker-board {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .tracker-column {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 16px;
+            min-height: 300px;
+        }
+
+        .column-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 8px;
+        }
+
+        .column-count {
+            background: #334155;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .application-card {
+            background: #1e293b;
+            border: 1px solid #475569;
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .application-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .application-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .edit-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: #2dd4bf;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .edit-link:hover {
+            text-decoration: underline;
+        }
+
+        .add-button {
+            display: inline-block;
+            background: #0d9488;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .add-button:hover {
+            background: #0f766e;
+        }
+
+        .empty-message {
+            color: #94a3b8;
+            font-size: 14px;
+            text-align: center;
+            padding: 28px 8px;
+        }
+
+        /* Light theme */
+        html:not(.dark) .tracker-column {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        html:not(.dark) .application-card {
+            background: white;
+            border-color: #cbd5e1;
+        }
+
+        html:not(.dark) .application-card p,
+        html:not(.dark) .empty-message {
+            color: #475569;
+        }
+
+        html:not(.dark) .column-count {
+            background: #cbd5e1;
+        }
+
+        html:not(.dark) .edit-link {
+            color: #0f766e;
+        }
+
+        @media (max-width: 1000px) {
+            .tracker-board {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .tracker-board {
+                grid-template-columns: 1fr;
+            }
+        }
+        .delete-button {
+    display: inline-block;
+    margin-left: 14px;
+    margin-top: 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #f87171;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    color: #ef4444;
+    text-decoration: underline;
+}
+    </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
+
+    <!-- Navigation -->
+    <header class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+        <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+             aria-label="Main navigation">
+
+            <a href="index.html" class="text-2xl font-bold text-teal-600">
+                DevTrack
+            </a>
+
+            <div class="flex flex-wrap items-center gap-5 text-sm font-medium">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="job-board.html">Job Board</a>
+                <a href="saved-jobs.html">Saved Jobs</a>
+                <a href="tracker.html" aria-current="page" class="text-teal-600">
+                    Tracker
+                </a>
+            </div>
+
+            <button type="button" data-theme-toggle
+                aria-label="Switch to dark mode"
+                aria-pressed="false"
+                class="rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-700">
+                Toggle theme
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="tracker-container">
+
+        <div class="tracker-heading">
+            <div>
+                <h1 class="text-3xl font-bold">
+                    Application Pipeline
+                </h1>
+                <p class="mt-2 text-slate-500 dark:text-slate-400">
+                    Track your job applications through each hiring stage.
+                </p>
+            </div>
+
+            <a href="add-application.html" class="add-button">
+                + Add New Application
+            </a>
+        </div>
+
+        <!-- Tracker Columns -->
+        <div class="tracker-board">
+
+            <section class="tracker-column" aria-labelledby="applied-heading">
+                <div class="column-heading">
+                    <h2 id="applied-heading" class="text-lg font-bold">Applied</h2>
+                    <span id="applied-count" class="column-count">0</span>
+                </div>
+                <div id="applied-list"></div>
+            </section>
+
+            <section class="tracker-column" aria-labelledby="screening-heading">
+                <div class="column-heading">
+                    <h2 id="screening-heading" class="text-lg font-bold">Screening</h2>
+                    <span id="screening-count" class="column-count">0</span>
+                </div>
+                <div id="screening-list"></div>
+            </section>
+
+            <section class="tracker-column" aria-labelledby="interview-heading">
+                <div class="column-heading">
+                    <h2 id="interview-heading" class="text-lg font-bold">Interview</h2>
+                    <span id="interview-count" class="column-count">0</span>
+                </div>
+                <div id="interview-list"></div>
+            </section>
+
+            <section class="tracker-column" aria-labelledby="offer-heading">
+                <div class="column-heading">
+                    <h2 id="offer-heading" class="text-lg font-bold">Offer</h2>
+                    <span id="offer-count" class="column-count">0</span>
+                </div>
+                <div id="offer-list"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        const stages = ["applied", "screening", "interview", "offer"];
+
+        let applications = [];
+
+        try {
+            const saved = JSON.parse(
+                localStorage.getItem("devtrackApplications") || "[]"
+            );
+            applications = Array.isArray(saved) ? saved : [];
+        } catch (error) {
+            console.error("Could not load applications:", error);
+        }
+
+        function createApplicationCard(application) {
+            const card = document.createElement("article");
+            card.className = "application-card";
+
+            const title = document.createElement("h3");
+            title.textContent = application.jobTitle || "Untitled Job";
+
+            const company = document.createElement("p");
+            company.textContent = application.company || "Unknown company";
+
+            const date = document.createElement("p");
+            date.textContent = "Applied: " + (application.dateApplied || "Not set");
+
+            const editLink = document.createElement("a");
+            editLink.className = "edit-link";
+            editLink.textContent = "Edit Application";
+            editLink.href = "add-application.html?id=" +
+                encodeURIComponent(application.id);
+
+           const deleteButton = document.createElement("button");
+
+deleteButton.type = "button";
+deleteButton.className = "delete-button";
+deleteButton.textContent = "Delete";
+deleteButton.setAttribute(
+    "aria-label",
+    "Delete application for " + application.jobTitle
+);
+
+deleteButton.addEventListener("click", function() {
+    deleteApplication(application.id);
+});
+
+card.appendChild(title);
+card.appendChild(company);
+card.appendChild(date);
+card.appendChild(editLink);
+card.appendChild(deleteButton);
+
+return card;
+        }
+
+        function displayApplications() {
+            stages.forEach(function(stage) {
+                const list = document.getElementById(stage + "-list");
+                const count = document.getElementById(stage + "-count");
+
+                const filtered = applications.filter(function(application) {
+                    return application.status === stage;
+                });
+
+                count.textContent = filtered.length;
+                list.replaceChildren();
+
+                if (filtered.length === 0) {
+                    const emptyMessage = document.createElement("p");
+                    emptyMessage.className = "empty-message";
+                    emptyMessage.textContent = "No applications yet";
+                    list.appendChild(emptyMessage);
+                } else {
+                    filtered.forEach(function(application) {
+                        list.appendChild(createApplicationCard(application));
+                    });
+                }
+            });
+        }
+        function deleteApplication(id) {
+    const confirmed = confirm(
+        "Are you sure you want to delete this application?"
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    const updatedApplications = applications.filter(function(app) {
+        return String(app.id) !== String(id);
+    });
+
+    if (updatedApplications.length === applications.length) {
+        alert("Application not found.");
+        return;
+    }
+
+    try {
+        localStorage.setItem(
+            "devtrackApplications",
+            JSON.stringify(updatedApplications)
+        );
+
+        applications = updatedApplications;
+        displayApplications();
+
+        alert("Application deleted successfully!");
+    } catch (error) {
+        console.error("Could not delete application:", error);
+        alert("Could not delete the application.");
+    }
+}
+
+        displayApplications();
+    </script>
+
+</body>
+</html>
+
+</html>
