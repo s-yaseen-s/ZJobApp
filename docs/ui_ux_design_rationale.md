@@ -8,6 +8,8 @@ This document outlines the design decisions, layout strategy, color system, and 
 
 The visual theme for DevTrack is designed specifically for software developers and tech job seekers. It balances a crisp, modern aesthetic with a high-contrast dark/light mode friendly color scheme.
 
+The navigation theme switch uses the operating system preference by default and remembers a visitor's selection across pages.
+
 * **Primary Accent (`indigo-600` / `#4F46E5`):** Represents focus, technology, and professionalism. Used for primary CTA buttons, active navigation indicators, and key metrics.
 * **Backgrounds (`slate-50` / `#F8FAFC` & `slate-900` / `#0F172A`):** Light slate background provides a clean canvas that minimizes eye fatigue during extended job search sessions.
 * **Card Backings (`white` / `#FFFFFF`):** Container surfaces are elevated using subtle drop shadows (`shadow-sm` and `shadow-md`) to clearly segregate data modules.

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>job board | DevTrack</title>
     <link href="./dist/output.css" rel="stylesheet">
+    <script src="./src/theme.js"></script>
 </head>
-<body class="min-h-screen bg-devtrack-bg text-white">
+<body class="min-h-screen bg-devtrack-bg font-sans text-slate-900 antialiased dark:text-slate-100">
 
   <!-- Header / Navigation -->
   <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
@@ -30,7 +31,11 @@
         <a href="dashboard.html" class="hover:text-teal-600 transition">Dashboard</a>
       </nav>
 
-      <div class="hidden md:flex items-center">
+      <div class="hidden md:flex items-center gap-3">
+        <button type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode" class="rounded-lg border border-slate-200 p-2 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
+          <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+        </button>
         <a href="login.html" class="text-sm font-semibold text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg shadow-sm transition">Sign In</a>
       </div>
 
@@ -47,6 +52,11 @@
           <a href="job-board.html" class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Job Board</a>
           <a href="saved-jobs.html" class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Saved Jobs</a>
           <hr class="border-slate-200 dark:border-slate-800">
+          <button type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode" class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:text-slate-200 dark:hover:bg-slate-800">
+            <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+            <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+            <span data-theme-label>Switch to dark mode</span>
+          </button>
           <a href="login.html" class="block w-full text-center px-3 py-2 text-sm font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg">Sign In</a>
         </div>
       </details>
@@ -67,11 +77,11 @@
                     <div class="xl:col-span-2">
                         <label for="search" class="mb-2 block text-sm font-semibold">search jobs</label>
                         <input id="search" type="search" placeholder="job title or company"
-                               class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white placeholder:text-devtrack-muted px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
+                               class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg px-4 py-3 text-slate-900 placeholder:text-devtrack-muted focus:outline-none focus:ring-2 focus:ring-devtrack-teal dark:text-white">
                     </div>
                     <div>
                         <label for="type" class="mb-2 block text-sm font-semibold">employment type</label>
-                        <select id="type" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
+                        <select id="type" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-devtrack-teal dark:text-white">
                             <option value="">any type</option>
                             <option>full-time</option>
                             <option>remote</option>
@@ -82,7 +92,7 @@
                     </div>
                     <div>
                         <label for="level" class="mb-2 block text-sm font-semibold">experience level</label>
-                        <select id="level" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
+                        <select id="level" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-devtrack-teal dark:text-white">
                             <option value="">any level</option>
                             <option>intern</option>
                             <option>junior</option>
@@ -92,7 +102,7 @@
                     </div>
                     <div>
                         <label for="salary" class="mb-2 block text-sm font-semibold">salary</label>
-                        <select id="salary" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-devtrack-teal">
+                        <select id="salary" class="w-full rounded-lg border border-devtrack-border bg-devtrack-bg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-devtrack-teal dark:text-white">
                             <option value="">any salary</option>
                             <option>under $30k</option>
                             <option>$30k - $60k</option>
@@ -116,7 +126,7 @@
                     </div>
                     <label class="flex items-center gap-2 text-sm">
                         <span>sort by</span>
-                        <select class="rounded-lg border border-devtrack-border bg-devtrack-bg text-white px-3 py-2">
+                        <select class="rounded-lg border border-devtrack-border bg-devtrack-bg px-3 py-2 text-slate-900 dark:text-white">
                             <option>most recent</option>
                             <option>company name</option>
                             <option>job title</option>
@@ -131,7 +141,7 @@
                             <h4 class="text-lg font-bold">junior frontend developer</h4>
                             <p class="mt-1 text-devtrack-muted">pixel studio</p>
                         </div>
-                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">full-time</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-teal-800 dark:text-devtrack-mint">full-time</span>
                     </div>
                     <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
                         <span class="rounded-md bg-devtrack-border px-3 py-1">remote</span>
@@ -141,7 +151,7 @@
                     <p class="mt-4 text-sm leading-6 text-devtrack-muted">help build websites using html, css and javascript.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                         <p class="text-sm text-devtrack-muted">posted 2 days ago</p>
-                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-teal-800 dark:text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
@@ -152,7 +162,7 @@
                             <h4 class="text-lg font-bold">software testing intern</h4>
                             <p class="mt-1 text-devtrack-muted">tech point</p>
                         </div>
-                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">internship</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-teal-800 dark:text-devtrack-mint">internship</span>
                     </div>
                     <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
                         <span class="rounded-md bg-devtrack-border px-3 py-1">hybrid</span>
@@ -162,7 +172,7 @@
                     <p class="mt-4 text-sm leading-6 text-devtrack-muted">help with test cases, bug reports and manual testing.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                         <p class="text-sm text-devtrack-muted">posted 4 days ago</p>
-                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-teal-800 dark:text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
@@ -173,7 +183,7 @@
                             <h4 class="text-lg font-bold">junior web developer</h4>
                             <p class="mt-1 text-devtrack-muted">bright solutions</p>
                         </div>
-                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">full-time</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-teal-800 dark:text-devtrack-mint">full-time</span>
                     </div>
                     <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
                         <span class="rounded-md bg-devtrack-border px-3 py-1">hybrid</span>
@@ -183,7 +193,7 @@
                     <p class="mt-4 text-sm leading-6 text-devtrack-muted">work with the team to build and improve web applications.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                         <p class="text-sm text-devtrack-muted">posted 1 week ago</p>
-                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-teal-800 dark:text-devtrack-mint">save job</button>
                     </div>
                 </article>
 
@@ -194,7 +204,7 @@
                             <h4 class="text-lg font-bold">backend developer intern</h4>
                             <p class="mt-1 text-devtrack-muted">code nest</p>
                         </div>
-                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-devtrack-mint">internship</span>
+                        <span class="rounded-full bg-devtrack-teal/20 px-3 py-1 text-sm text-teal-800 dark:text-devtrack-mint">internship</span>
                     </div>
                     <div class="mt-4 flex flex-wrap gap-2 text-sm text-devtrack-muted">
                         <span class="rounded-md bg-devtrack-border px-3 py-1">on-site</span>
@@ -204,7 +214,7 @@
                     <p class="mt-4 text-sm leading-6 text-devtrack-muted">learn backend development and help with simple api tasks.</p>
                     <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                         <p class="text-sm text-devtrack-muted">posted 1 week ago</p>
-                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-devtrack-mint">save job</button>
+                        <button type="button" class="rounded-lg border border-devtrack-teal px-4 py-2 font-semibold text-teal-800 dark:text-devtrack-mint">save job</button>
                     </div>
                 </article>
 

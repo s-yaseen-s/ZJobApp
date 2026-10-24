@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ["./*.html"],
   theme: {
     extend: {
@@ -8,10 +9,10 @@ module.exports = {
           teal: '#009488',
           mint: '#CCFFFC',
           navy: '#172554',
-          bg: '#0B0F17',
-          card: '#111827',
-          border: '#1F2937',
-          muted: '#9CA3AF'
+          bg: 'var(--devtrack-bg)',
+          card: 'var(--devtrack-card)',
+          border: 'var(--devtrack-border)',
+          muted: 'var(--devtrack-muted)'
         }
       }
     },
