@@ -1,0 +1,54 @@
+{
+  "user": {
+    "id": "usr-101",
+    "name": "My Profile",
+    "email": "user@example.com",
+    "avatar": "M",
+    "targetRole": "Frontend Developer"
+  },
+  "metrics": {
+    "savedJobsCount": 12,
+    "applicationsCount": 8,
+    "interviewsCount": 3,
+    "offersCount": 1
+  },
+  "stagesBreakdown": {
+    "applied": 8,
+    "screening": 5,
+    "interview": 3,
+    "offer": 1
+  },
+  "employmentTypeBreakdown": {
+    "fullTime": 6,
+    "remote": 3,
+    "internship": 2,
+    "partTime": 1
+  },
+  "savedJobIds": ["job-1", "job-6", "job-7"],
+  "recentApplications": [
+    {
+      "id": "app-001",
+      "jobId": "job-4",
+      "jobTitle": "Junior Web Developer",
+      "company": "Bright Solutions",
+      "dateApplied": "2026-10-20",
+      "status": "interview"
+    },
+    {
+      "id": "app-002",
+      "jobId": "job-3",
+      "jobTitle": "Software Tester Intern",
+      "company": "Tech Point",
+      "dateApplied": "2026-10-18",
+      "status": "screening"
+    },
+    {
+      "id": "app-003",
+      "jobId": "job-2",
+      "jobTitle": "Frontend Developer",
+      "company": "Pixel Studio",
+      "dateApplied": "2026-10-15",
+      "status": "applied"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+[
+  {
+    "id": "job-1",
+    "title": "Frontend Developer",
+    "company": "Google",
+    "location": "Cairo, Egypt",
+    "workplaceType": "Hybrid",
+    "employmentType": "full-time",
+    "experienceLevel": "junior",
+    "salaryRange": "Not specified",
+    "postedDate": "2026-10-20",
+    "description": "We are looking for a Frontend Developer to help build responsive and user-friendly web applications. You will work with a team to create clear, accessible, and reliable user interfaces.",
+    "responsibilities": [
+      "Build and maintain responsive web pages.",
+      "Work with designers and other developers.",
+      "Write clean and organized code.",
+      "Test pages on different screen sizes."
+    ],
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Git"]
+  },
+  {
+    "id": "job-2",
+    "title": "Junior Frontend Developer",
+    "company": "Pixel Studio",
+    "location": "Remote",
+    "workplaceType": "Remote",
+    "employmentType": "full-time",
+    "experienceLevel": "junior",
+    "salaryRange": "$30k - $45k",
+    "postedDate": "2026-10-22",
+    "description": "Help build websites using HTML, CSS, and JavaScript.",
+    "responsibilities": [
+      "Collaborate with design teams.",
+      "Maintain responsive frontend layouts."
+    ],
+    "skills": ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    "id": "job-3",
+    "title": "Software Testing Intern",
+    "company": "Tech Point",
+    "location": "Cairo, Egypt",
+    "workplaceType": "Hybrid",
+    "employmentType": "internship",
+    "experienceLevel": "intern",
+    "salaryRange": "$8k - $12k",
+    "postedDate": "2026-10-20",
+    "description": "Help with test cases, bug reports, and manual testing.",
+    "responsibilities": [
+      "Execute manual test suites.",
+      "Log detailed bug reports."
+    ],
+    "skills": ["QA", "Manual Testing", "Bug Tracking"]
+  },
+  {
+    "id": "job-4",
+    "title": "Junior Web Developer",
+    "company": "Bright Solutions",
+    "location": "Cairo, Egypt",
+    "workplaceType": "Hybrid",
+    "employmentType": "full-time",
+    "experienceLevel": "junior",
+    "salaryRange": "$35k - $50k",
+    "postedDate": "2026-10-17",
+    "description": "Work with the team to build and improve web applications.",
+    "responsibilities": [
+      "Develop full-stack web features.",
+      "Participate in code reviews."
+    ],
+    "skills": ["JavaScript", "Node.js", "HTML", "CSS"]
+  },
+  {
+    "id": "job-5",
+    "title": "Backend Developer Intern",
+    "company": "Code Nest",
+    "location": "Cairo, Egypt",
+    "workplaceType": "On-site",
+    "employmentType": "internship",
+    "experienceLevel": "intern",
+    "salaryRange": "$10k - $15k",
+    "postedDate": "2026-10-17",
+    "description": "Learn backend development and help with simple API tasks.",
+    "responsibilities": [
+      "Build basic REST API endpoints.",
+      "Assist senior engineers."
+    ],
+    "skills": ["Python", "Node.js", "APIs", "SQL"]
+  },
+  {
+    "id": "job-6",
+    "title": "Software Engineering Intern",
+    "company": "Meta",
+    "location": "Egypt",
+    "workplaceType": "Remote",
+    "employmentType": "internship",
+    "experienceLevel": "intern",
+    "salaryRange": "Competitive",
+    "postedDate": "2026-10-15",
+    "description": "Learn from experienced engineers while contributing to software development projects.",
+    "responsibilities": [
+      "Develop software modules.",
+      "Solve algorithmic problems."
+    ],
+    "skills": ["Python", "C++", "Data Structures"]
+  },
+  {
+    "id": "job-7",
+    "title": "Junior Software Developer",
+    "company": "Stripe",
+    "location": "Remote",
+    "workplaceType": "Remote",
+    "employmentType": "full-time",
+    "experienceLevel": "junior",
+    "salaryRange": "$50k - $70k",
+    "postedDate": "2026-10-14",
+    "description": "Help develop and maintain software tools and reliable web services.",
+    "responsibilities": [
+      "Maintain payment integration infrastructure.",
+      "Write unit and integration tests."
+    ],
+    "skills": ["JavaScript", "APIs", "Git", "Node.js"]
+  }
+]
