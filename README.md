@@ -2,6 +2,10 @@
 
 DevTrack is a modern, responsive web application designed to empower software developers to manage, track, and optimize their job application process in one centralized workspace.
 
+## 🎨 Figma Design
+
+[View the DevTrack design in Figma](https://www.figma.com/design/VJIFNvJ0dFARc8ZhddjTHG/Untitled?node-id=0-1&t=UHMgS4RdxtFNrRh1-1)
+
 ## 👥 Team Members & Roles
 
 | Team Member | GitHub Profile | Primary Contributions & Assigned Pages | 
