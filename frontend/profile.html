@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Profile Settings | DevTrack</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <script src="./src/theme.js"></script>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90">
+    <div class="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex shrink-0 items-center gap-3" aria-label="DevTrack home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-xl font-black text-white shadow-md">D</span>
+        <span class="text-xl font-bold text-slate-900 dark:text-white">Dev<span class="text-teal-600">Track</span></span>
+      </a>
+
+      <nav aria-label="Main navigation" class="hidden items-center gap-6 text-sm font-semibold text-slate-600 dark:text-slate-300 md:flex">
+        <a href="index.html" class="transition hover:text-teal-600">Home</a>
+        <a href="job-board.html" class="transition hover:text-teal-600">Job Board</a>
+        <a href="saved-jobs.html" class="transition hover:text-teal-600">Saved Jobs</a>
+        <a href="dashboard.html" class="transition hover:text-teal-600">Dashboard</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode" class="rounded-lg border border-slate-200 p-2 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
+          <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+        </button>
+        <details class="relative md:hidden">
+          <summary class="list-none cursor-pointer rounded-lg border border-slate-200 p-2 text-slate-700 dark:border-slate-700 dark:text-slate-200">
+            <span class="sr-only">Open navigation menu</span>
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </summary>
+          <nav aria-label="Mobile navigation" class="absolute right-0 top-12 z-50 w-56 space-y-1 rounded-xl border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <a href="index.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Home</a>
+            <a href="job-board.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Job Board</a>
+            <a href="saved-jobs.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Saved Jobs</a>
+            <a href="dashboard.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Dashboard</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+    <div class="mb-8 border-b border-slate-200 pb-6 dark:border-slate-800">
+      <p class="text-sm font-semibold text-teal-700 dark:text-teal-400">ACCOUNT</p>
+      <div class="mt-2 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Profile settings</h1>
+          <p class="mt-2 max-w-2xl text-slate-600 dark:text-slate-400">Manage your personal details and the roles you are looking for.</p>
+        </div>
+        <a href="dashboard.html" class="text-sm font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400">Back to dashboard</a>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)]">
+      <aside class="self-start border-b border-slate-200 pb-6 dark:border-slate-800 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-8">
+        <div class="flex items-center gap-4 lg:flex-col lg:items-start">
+          <div id="profile-avatar" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xl font-bold text-teal-800 ring-4 ring-white dark:bg-teal-950 dark:text-teal-200 dark:ring-slate-950" aria-hidden="true">YS</div>
+          <div>
+            <h2 id="profile-name-preview" class="font-bold text-slate-900 dark:text-white">Your name</h2>
+            <p id="profile-title-preview" class="mt-1 text-sm text-slate-600 dark:text-slate-400">Add your professional title</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <p class="text-xs font-bold uppercase text-slate-500 dark:text-slate-400">Profile</p>
+          <a href="#personal-information" aria-current="page" class="mt-2 flex items-center gap-3 rounded-lg border-l-2 border-teal-600 bg-teal-50 px-3 py-2.5 text-sm font-semibold text-teal-800 dark:bg-teal-950/50 dark:text-teal-200">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+            Personal information
+          </a>
+          <a href="#job-preferences" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-13 5h18m-11 0v2h4v-2"/></svg>
+            Job preferences
+          </a>
+        </div>
+        <p class="mt-6 text-xs leading-5 text-slate-500 dark:text-slate-400">Your profile details are saved in this browser for this demo.</p>
+      </aside>
+
+      <form id="profile-form" class="min-w-0" novalidate>
+        <section id="personal-information" class="scroll-mt-24 border-b border-slate-200 pb-8 dark:border-slate-800">
+          <div class="mb-6">
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white">Personal information</h2>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">How employers and your network can identify you.</p>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="full-name" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Full name</label>
+              <input id="full-name" name="fullName" autocomplete="name" placeholder="e.g. Yaseen Smith" required class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div>
+              <label for="professional-title" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Professional title</label>
+              <input id="professional-title" name="professionalTitle" autocomplete="organization-title" placeholder="e.g. Frontend Developer" class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div>
+              <label for="email" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div>
+              <label for="location" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Location</label>
+              <input id="location" name="location" autocomplete="address-level2" placeholder="e.g. Cairo, Egypt" class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div>
+              <label for="portfolio" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Portfolio URL</label>
+              <input id="portfolio" name="portfolio" type="url" autocomplete="url" placeholder="https://yourportfolio.com" class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div>
+              <label for="github" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">GitHub URL</label>
+              <input id="github" name="github" type="url" placeholder="https://github.com/yourname" class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="bio" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">About</label>
+              <textarea id="bio" name="bio" rows="4" maxlength="500" placeholder="A short introduction about your experience and what you do best." class="w-full resize-y rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white"></textarea>
+              <p class="mt-1 text-right text-xs text-slate-500 dark:text-slate-400">Up to 500 characters</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="job-preferences" class="scroll-mt-24 border-b border-slate-200 py-8 dark:border-slate-800">
+          <div class="mb-6">
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white">Job preferences</h2>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Help tailor your search to the opportunities you want.</p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="target-role" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Target role</label>
+              <input id="target-role" name="targetRole" placeholder="e.g. Frontend Developer" class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            </div>
+            <div>
+              <label for="experience" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">Experience level</label>
+              <select id="experience" name="experience" class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+                <option value="">Select experience level</option>
+                <option>Entry level</option>
+                <option>Mid level</option>
+                <option>Senior</option>
+                <option>Lead</option>
+              </select>
+            </div>
+            <fieldset class="sm:col-span-2">
+              <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-200">Preferred work style</legend>
+              <div class="flex flex-wrap gap-x-6 gap-y-3">
+                <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300"><input type="checkbox" name="workStyle" value="On-site" class="h-4 w-4 rounded border-slate-300 accent-teal-600">On-site</label>
+                <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300"><input type="checkbox" name="workStyle" value="Hybrid" class="h-4 w-4 rounded border-slate-300 accent-teal-600">Hybrid</label>
+                <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300"><input type="checkbox" name="workStyle" value="Remote" class="h-4 w-4 rounded border-slate-300 accent-teal-600">Remote</label>
+              </div>
+            </fieldset>
+            <label class="flex items-start gap-3 sm:col-span-2">
+              <input type="checkbox" name="jobAlerts" class="mt-0.5 h-4 w-4 rounded border-slate-300 accent-teal-600">
+              <span>
+                <span class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Job alerts</span>
+                <span class="mt-1 block text-sm text-slate-600 dark:text-slate-400">Receive updates about roles that match these preferences.</span>
+              </span>
+            </label>
+          </div>
+        </section>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-6">
+          <p id="save-status" class="text-sm text-slate-600 dark:text-slate-400" role="status" aria-live="polite"></p>
+          <div class="ml-auto flex items-center gap-3">
+            <button type="reset" class="rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-900">Reset</button>
+            <button type="submit" class="rounded-lg bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2 dark:focus:ring-offset-slate-950">Save changes</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const profileForm = document.querySelector('#profile-form');
+    const profileFields = [...profileForm.elements].filter((field) => field.name);
+    const savedProfile = JSON.parse(localStorage.getItem('devtrack-profile') || '{}');
+
+    for (const field of profileFields) {
+      if (field.type === 'checkbox') {
+        field.checked = Array.isArray(savedProfile[field.name])
+          ? savedProfile[field.name].includes(field.value)
+          : savedProfile[field.name] === true;
+      } else if (savedProfile[field.name] !== undefined) {
+        field.value = savedProfile[field.name];
+      }
+    }
+
+    function updateProfilePreview() {
+      const fullName = profileForm.elements.fullName.value.trim();
+      const professionalTitle = profileForm.elements.professionalTitle.value.trim();
+      document.querySelector('#profile-name-preview').textContent = fullName || 'Your name';
+      document.querySelector('#profile-title-preview').textContent = professionalTitle || 'Add your professional title';
+      document.querySelector('#profile-avatar').textContent = fullName
+        ? fullName.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toUpperCase()
+        : 'YS';
+    }
+
+    updateProfilePreview();
+
+    profileForm.addEventListener('input', (event) => {
+      if (event.target.name === 'fullName' || event.target.name === 'professionalTitle') {
+        updateProfilePreview();
+      }
+    });
+
+    profileForm.addEventListener('reset', () => {
+      window.setTimeout(() => {
+        updateProfilePreview();
+        document.querySelector('#save-status').textContent = 'Form reset.';
+      });
+    });
+
+    profileForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!profileForm.reportValidity()) return;
+
+      const profile = {};
+      for (const field of profileFields) {
+        if (field.type === 'checkbox') {
+          if (!Array.isArray(profile[field.name])) profile[field.name] = [];
+          if (field.checked) profile[field.name].push(field.value);
+        } else {
+          profile[field.name] = field.value.trim();
+        }
+      }
+
+      localStorage.setItem('devtrack-profile', JSON.stringify(profile));
+      document.querySelector('#save-status').textContent = 'Profile changes saved on this device.';
+      updateProfilePreview();
+    });
+  </script>
+</body>
+</html>

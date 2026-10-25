@@ -6,7 +6,7 @@ DevTrack is a modern, responsive web application designed to empower software de
 
 | Team Member | GitHub Profile | Primary Contributions & Assigned Pages | 
 | ----- | ----- | ----- | 
-| **Yaseen S.** | [@s-yaseen-s](https://github.com/s-yaseen-s) | Landing Page (`landingPage.html`), Authentication (`login.html`, `register.html`), Profile Settings (`profile.html`), Mock Data Architecture (`jobs.json`, `mock-data.json`). | 
+| **Yaseen S.** | [@s-yaseen-s](https://github.com/s-yaseen-s) | Landing Page (`index.html`), Authentication (`login.html`, `register.html`), Profile Settings (`profile.html`), Mock Data Architecture (`jobs.json`, `mock-data.json`). | 
 | **Shehab M.** | [@s-shehabmadgdy-rrr](https://github.com/s-shehabmadgdy-rrr) | Dashboard Page (`dashboard.html`), Job Board Page (`job-board.html`). | 
 | **Mariam** | [@Mar1am574](https://github.com/Mar1am574) | Job Details View (`job-details.html`), Saved Jobs Page (`saved-jobs.html`). | 
 | **Maya** | [@MAYA-P-code](https://github.com/MAYA-P-code) | Add/Edit Application Page (`add-application.html`), Application Tracker Pipeline Page (`tracker.html`). | 
@@ -22,7 +22,7 @@ ZJobApp/
 ├── frontend/                  # Web application source files
 │   ├── dist/                  # Compiled output stylesheet (output.css)
 │   ├── src/                   # Source CSS directives (input.css)
-│   ├── landingPage.html       # Landing page entry point
+│   ├── index.html       # Landing page entry point
 │   ├── dashboard.html         # Application metrics & pipeline dashboard
 │   ├── job-board.html         # Developer job feed with filter controls
 │   ├── job-details.html       # Individual job posting & requirements view
@@ -46,7 +46,7 @@ ZJobApp/
 
 ## 🖥️ Platform Pages Overview
 
- 1. **Landing Page (`frontend/landingPage.html`):** Marketing hero section, feature highlights, and clear call-to-actions (Built by **Yaseen**).
+ 1. **Landing Page (`frontend/index.html`):** Marketing hero section, feature highlights, and clear call-to-actions (Built by **Yaseen**).
 
  2. **Dashboard (`frontend/dashboard.html`):** Main tracking dashboard displaying metrics, analytics, and active application stages (Built by **Shehab**).
 
